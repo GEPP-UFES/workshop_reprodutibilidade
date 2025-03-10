@@ -1,0 +1,149 @@
+---
+title: Ferramentas para Documentos Reprodutíveis
+subtitle: Escrita Científica em R
+author: Alberson Miranda
+institute: PPGeco/UFES
+thanks: Disponível em github.com/GEPP-UFES/workshop_reprodutibilidade
+date: last-modified
+date-format: "MMMM [de] YYYY"
+lang: pt-BR
+format:
+  beamer:
+    output-file: apresentacao_ferramentas.pdf
+    theme: "Madrid"
+    
+---
+
+## OUTLINE
+
+- Posit Quarto
+- Boas práticas
+- Controle de versão (Git)
+- Repositórios (GitHub)
+- Ambientes virtuais (Renv)
+- Virtualização (Docker)
+
+## INTRODUÇÃO
+
+- Ferramentas sozinhas não garantem reprodutibilidade
+- Ferramentas + práticas = reprodutibilidade
+
+## FERRAMENTAS
+
+- R (https://www.r-project.org)
+- IDE
+  - RStudio Desktop (https://posit.co/download/rstudio-desktop/)
+  - Visual Studio Code (https://code.visualstudio.com)
+  - Positron (https://positron.posit.co)
+- Quarto (https://quarto.org)
+
+## O QUE É QUARTO?
+
+- Quarto é um software que integra um ecossistema (Pandoc, Latex, Typst, Reveal.js, Microsoft Word e Powerpoint, ePub) que possibilita a escrita técnica e científica em vários formatos e a partir de várias linguagens de programação (R, Python, Julia, Javascript, C++).
+- Documentos (artigos, relatórios, dissertações etc.)
+- Livros
+- Apresentações
+- Dashboards
+- Blogs
+
+## EXEMPLO
+
+- Uma lista de exercícios de econometria com R + Latex
+  - new project -> new directory -> Quarto project
+
+![](img/1.png){width=70% fig-align="center"}
+
+## É TUDO YAML!
+
+```yaml
+---
+title: Título
+subtitle: Subtítulo
+author:
+  - Autor 1
+  - Autor 2
+date: last-modified
+date-format: long
+lang: pt-BR
+format: pdf  
+---
+
+# CAPÍTULO
+
+Texto
+```
+
+## É TUDO YAML!
+
+```yaml
+---
+title: Título
+subtitle: Subtítulo
+author:
+  - Autor 1
+  - Autor 2
+date: last-modified
+date-format: long
+lang: pt-BR
+format:
+  beamer:
+    theme: "Madrid"
+---
+
+# CAPÍTULO
+
+Texto
+```
+
+## EXEMPLO: ECONOMETRIA EM R
+
+https://github.com/GEPP-UFES/econometria_I
+
+## BOAS PRÁTICAS
+
+- Documentação clara e detalhada
+- Estrutura de projeto coerente e autocontida
+- Controle de versão para acompanhar mudanças
+
+## AMBIENTES VIRTUAIS (RENV)
+
+### Como garantir que o código que você escreveu hoje vai funcionar daqui a 5 anos?
+
+- Gerenciamento de dependências em R
+- Criação de ambientes isolados para projetos
+- Facilita a reprodução de ambientes de desenvolvimento
+
+## AMBIENTES VIRTUAIS (RENV)
+
+- Instalação: `install.packages("renv")`
+- Inicialização: `renv::init()`
+- Lockfile: `renv.lock`
+- Pacotes: `renv::snapshot()`
+- Restauração: `renv::restore()`
+
+## AMBIENTES VIRTUAIS (RENV)
+
+- Limitação: não funciona com pacotes do sistema
+- Informa mas não resolve interpretadores
+
+## VIRTUALIZAÇÃO (DOCKER)
+
+- Criação de contêineres para ambientes de desenvolvimento
+- Isolamento de dependências e configurações
+- Facilita a distribuição e a reprodução de ambientes
+- Integração com CI/CD e plataformas de nuvem
+
+## CONTROLE DE VERSÃO (GIT)
+
+- Sistema de controle de versão distribuído
+- Permite acompanhar mudanças no código
+- Facilita a colaboração entre desenvolvedores
+- Integração com repositórios
+
+## REPOSITÓRIOS
+
+- Diversas opções de repositórios: GitHub, GitLab, Bitbucket
+- Plataforma para hospedagem de repositórios Git
+- Facilita a colaboração e o compartilhamento de código
+- Ferramentas para gerenciamento de projetos
+- Integração com CI/CD
